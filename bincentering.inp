@@ -1,0 +1,7 @@
+"infile.root"   # Input file path
+"histogram"     # Histogram name in the input file
+"outfile.root"  # Output file path
+2.039           # Beam Energy (GeV)
+0               # Electron helicity (-1, 0, 1)
+5               # Model option (1=A0, 2=daresbury, 4=MAID98, 5=MAID2000)
+3               # Channel option (1=pi0, 2=pi-, 3=pi+)

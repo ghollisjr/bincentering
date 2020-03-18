@@ -1,0 +1,65 @@
+;; -*- mode: text; -*-
+Key: - Completed
+     + Todo
+     * General info
+     % Inapplicable, though similar thoughts might be resolvable later
+     c Currently
+
+- Modify Makefile from maid_xsection example program
+
+  - Change program and source file names.
+  - Add more source code files and objects
+  - Update the executable target recipe to allow new object files
+
+- Look at the testIntegrationMultiDim() example from rootexample.cc to
+  see how to implement multi-dimensional integration from a C
+  function.  Can use this to create a bincentering corrections
+  program.
+
+- Implement histogram reading from file
+
+- Implement bin specification reading from histograms, and generating
+  empty histograms from bin specifications
+
+- Create dsigma function which uses global variables and type casting
+  to allow the proper function type for ROOT to be able to integrate
+
+- Add averaging functions that use the integration functions
+
+- Add verbose messaging abilities to integration over histograms
+
+- Test libraries:
+
+  -1. Test argument parsing
+  -2. Test sampling
+
+      UPDATE: sampling fails in bincentering, investigate
+  -3. Test integration
+  -4. Test averaging
+  -5. Test histogram division
+  
+- Test integration:
+
+  -1. Integration over a single bin
+
+      Test seems to be OK, except for large W range I did get an NaN
+      as the result of the integration, but for [1.1,1.2] W range I
+      got a sensible answer.
+
+  -2. Integration over Ye's histogram binning
+
+- Program should support input from THnSparseD objects only, since
+  there are far too many bins to integrate in the full histogram
+  space.
+
+% (POSSIBLY DEFUNCT, REEXAMINE LATER) Program should accept various
+  kinds of input based on the input arguments, so I should include my
+  argument parser library in the project.  Inputs to support:
+
+  * Text input:
+    + Bin edges
+    + Min, max, delta
+  * ROOT File input:
+    + Binning from TH1, TH2, TH3, or THnSparse histogram.  Just
+      provide path to root file and path within root file to the
+      histogram

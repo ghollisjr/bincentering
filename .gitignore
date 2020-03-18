@@ -1,0 +1,5 @@
+.emacs_backups/
+work/
+test/compare
+*.o
+*.root
